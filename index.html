@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NameScope | OSINT Search Tool</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Header -->
+
+        <div class="top-bar">
+
+            <div>
+                <h1>🔍 NameScope</h1>
+                <p class="subtitle">
+                    Professional OSINT Profile Search Tool
+                </p>
+            </div>
+
+            <button class="theme-btn" onclick="toggleTheme()">
+                🌙 Dark Mode
+            </button>
+
+        </div>
+
+        <!-- Controls -->
+
+        <div class="controls">
+
+            <select id="language" onchange="changeLanguage()">
+                <option value="en">English</option>
+                <option value="ar">العربية</option>
+            </select>
+
+            <select onchange="changeThemeColor(this.value)">
+                <option value="#2563eb">🔵 Blue</option>
+                <option value="#16a34a">🟢 Green</option>
+                <option value="#9333ea">🟣 Purple</option>
+                <option value="#dc2626">🔴 Red</option>
+            </select>
+
+        </div>
+
+        <!-- Statistics -->
+
+        <div class="stats">
+
+            <div class="stat-card">
+                <h3 id="searchCount">0</h3>
+                <p>Total Searches</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>10+</h3>
+                <p>Sources</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>OSINT</h3>
+                <p>Research Tool</p>
+            </div>
+
+        </div>
+
+        <!-- Search Section -->
+
+        <div class="search-section">
+
+            <select id="searchType" onchange="updateSearchField()">
+                <option value="name">🔎 Search by Full Name</option>
+                <option value="username">👤 Search by Username</option>
+            </select>
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Enter Full Name">
+
+            <input
+                type="text"
+                id="city"
+                placeholder="Enter City (Optional)">
+
+            <select id="country">
+
+                <option>🇧🇭 Bahrain</option>
+                <option>🇸🇦 Saudi Arabia</option>
+                <option>🇦🇪 UAE</option>
+                <option>🇶🇦 Qatar</option>
+                <option>🇰🇼 Kuwait</option>
+                <option>🇴🇲 Oman</option>
+                <option>🇪🇬 Egypt</option>
+                <option>🇯🇴 Jordan</option>
+                <option>🇺🇸 United States</option>
+                <option>🇬🇧 United Kingdom</option>
+
+            </select>
+
+            <button
+                class="search-btn"
+                onclick="searchProfiles()">
+                🔎 Search Profiles
+            </button>
+
+            <button
+                class="clear-btn"
+                onclick="clearResults()">
+                🗑 Clear Results
+            </button>
+
+        </div>
+
+        <!-- Search Counter -->
+
+        <div class="counter-box">
+            <p id="counter">Searches: 0</p>
+        </div>
+
+        <!-- Results -->
+
+        <div id="results" class="results-grid"></div>
+
+        <hr>
+
+        <!-- History -->
+
+        <section class="history-section">
+
+            <h2>📜 Search History</h2>
+
+            <ul id="history"></ul>
+
+        </section>
+
+        <hr>
+
+        <!-- About -->
+
+        <section class="info-box">
+
+            <h2>📖 About NameScope</h2>
+
+            <p>
+                NameScope is an educational OSINT tool designed to help
+                users locate publicly available profiles, usernames,
+                social media accounts, documents, and online references
+                using advanced search techniques.
+            </p>
+
+        </section>
+
+        <hr>
+
+        <!-- Date and Time -->
+
+        <div class="clock-box">
+
+            <h3>🕒 Current Date & Time</h3>
+
+            <p id="datetime"></p>
+
+        </div>
+
+        <!-- Footer -->
+
+        <footer>
+
+            <p>
+                © 2026 NameScope
+            </p>
+
+            <p>
+                Created by Ahmed Eid
+            </p>
+
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
